@@ -18,25 +18,29 @@ class MainBtnWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return isLoading
         ? Shimmer.fromColors(
+            baseColor: context.colors.secondary,
+            highlightColor: context.colors.secondary,
             child: Container(
               width: double.infinity,
               height: context.spaces.space_600,
               decoration: BoxDecoration(
-                color: context.colors.primary,
+                color: context.colors.secondary,
                 borderRadius: BorderRadius.circular(context.spaces.space_100),
               ),
             ),
-            baseColor: context.colors.primary,
-            highlightColor: context.colors.primary.withOpacity(0.5),
           )
-        : SizedBox(
+        : Container(
             width: double.infinity,
             height: context.spaces.space_600,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(colors: context.colors.buttoncolor),
+              borderRadius: BorderRadius.circular(context.spaces.space_100),
+            ),
             child: ElevatedButton(
               onPressed: onTap,
               style: ElevatedButton.styleFrom(
-                shadowColor: Colors.white,
-                backgroundColor: context.colors.primary,
+                shadowColor: Colors.transparent,
+                backgroundColor: Colors.transparent,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(context.spaces.space_100),
                 ),

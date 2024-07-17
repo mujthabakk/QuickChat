@@ -1,3 +1,5 @@
+import 'package:chat__app/core/routers/routers.dart';
+import 'package:chat__app/core/theme/dark_theme.dart';
 import 'package:chat__app/core/theme/theme_provider.dart';
 import 'package:chat__app/firebase_options.dart';
 import 'package:chat__app/view/pages/splash_screen.dart';
@@ -23,13 +25,13 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: router,
       debugShowCheckedModeBanner: false,
       scaffoldMessengerKey: scaffoldMessngerKey,
-      title: 'Flutter Demo',
-      // theme: ref.watch(darkThemeProvider),
-      theme: ref.watch(themeProvider),
-      home: const SplashScreen(),
+
+      theme: ref.watch(darkThemeProvider),
+      // theme: ref.watch(themeProvider),
     );
   }
 }

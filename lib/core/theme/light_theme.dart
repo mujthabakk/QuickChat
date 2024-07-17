@@ -15,12 +15,12 @@ final _lighttheme = ThemeData(
     extensions: [
       //AppColorExtension
       AppColorExtension(
-        buttoncolor: [AppColorPalettes.green500,AppColorPalettes.green300],
+        buttoncolor: [AppColorPalettes.green500, AppColorPalettes.green300],
         primary: AppColorPalettes.white500,
         secondary: AppColorPalettes.black500,
         text: AppColorPalettes.grey850,
         textSubtle: AppColorPalettes.grey200,
-        btnText: AppColorPalettes.white500,
+        btnText: AppColorPalettes.black500,
         border: AppColorPalettes.grey600,
         bottomNavBorder: AppColorPalettes.grey600,
         cardBackground: AppColorPalettes.white500,
