@@ -42,7 +42,7 @@ class MainBtnWidget extends StatelessWidget {
                 shadowColor: Colors.transparent,
                 backgroundColor: Colors.transparent,
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(context.spaces.space_100),
+                  borderRadius: BorderRadius.circular(context.spaces.space_300),
                 ),
                 padding: EdgeInsets.symmetric(
                   horizontal: context.spaces.space_200,

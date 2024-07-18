@@ -2,6 +2,8 @@ import 'package:chat__app/core/constants/authentication/login_page_constants.dar
 import 'package:chat__app/core/constants/onboading_constats/onboading_img_constatns.dart';
 import 'package:chat__app/core/theme/app_theme.dart';
 import 'package:chat__app/core/widget/main_btn_widget.dart';
+import 'package:chat__app/utils/alert_box/alert_box.dart';
+import 'package:chat__app/view/pages/otp_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
@@ -67,7 +69,13 @@ class LoginPage extends ConsumerWidget {
             ),
             child: MainBtnWidget(
               onTap: () {
-                context.push(LoginPage.routePath);
+                if (phoneNumberController.text.isNotEmpty &&
+                    phoneNumberController.text.length == 10) {
+                  context.push(OtpPage.routePath, extra: {
+                    'phoneNumber':
+                        "${ref.watch(coutryCodeProvider)}${phoneNumberController.text}"
+                  });
+                }
               },
               btnTxt: textConstatns.btnText,
             ),
