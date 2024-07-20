@@ -1,4 +1,6 @@
 import 'package:chat__app/main.dart';
+import 'package:chat__app/view/pages/chat_list_page.dart';
+import 'package:chat__app/view/pages/chat_page.dart';
 import 'package:chat__app/view/pages/create_account.dart';
 import 'package:chat__app/view/pages/login_page.dart';
 import 'package:chat__app/view/pages/onboading/onboading_page_one.dart';
@@ -41,6 +43,18 @@ final router = GoRouter(
         path: CreateAccount.routePath,
         builder: (context, state) {
           return const CreateAccount();
+        },
+      ),
+      GoRoute(
+        path: ChatListPage.routePath,
+        builder: (context, state) {
+          return const ChatListPage();
+        },
+      ),
+      GoRoute(
+        path: ChatPage.routePath,
+        builder: (context, state) {
+          return const ChatPage();
         },
       ),
     ]);

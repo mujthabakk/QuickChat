@@ -38,7 +38,8 @@ class TextFeildWidget extends StatelessWidget {
         labelText: labeltxt,
         labelStyle: context.typography.body,
         hintText: hinttxt,
-        hintStyle: context.typography.body,
+        hintStyle:
+            TextStyle(color: Colors.grey.withOpacity(0.5), letterSpacing: 2),
         suffixIcon: suffixicon,
         suffix: suffix,
         errorBorder: const OutlineInputBorder(

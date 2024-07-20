@@ -5,6 +5,8 @@ class CreateAcconutConstats {
   final callYouText = 'What should people call you?';
   final btnText = 'Continue';
   final userNameText = "Username";
+
+  get continueText => null;
 }
 
 @riverpod

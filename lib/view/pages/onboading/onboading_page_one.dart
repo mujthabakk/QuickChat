@@ -15,7 +15,7 @@ class OnboadingScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final imgage = ref.watch(onboadingImgConstatnsProvider);
+    final image = ref.watch(onboadingImgConstatnsProvider);
     final textConstatns = ref.watch(onboadingConstantsProvider);
     return Scaffold(
         body: Column(
@@ -26,7 +26,7 @@ class OnboadingScreen extends ConsumerWidget {
           height: context.spaces.space_600 * 7,
           width: double.infinity,
           child: SvgPicture.asset(
-            imgage.onboardingImg,
+            image.onboardingImg,
             // fit: BoxFit.cover,
           ),
         ),

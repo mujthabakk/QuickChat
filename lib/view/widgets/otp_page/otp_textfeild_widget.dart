@@ -33,20 +33,19 @@ class OtpTextFeildWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return OTPTextField(
       length: length,
-      width: width!,
+      width: width ?? MediaQuery.of(context).size.width,
       fieldWidth: fieldWidth,
       style: style,
-      textFieldAlignment: textFieldAlignment!,
-      fieldStyle: fieldStyle!,
+      textFieldAlignment: textFieldAlignment ?? MainAxisAlignment.spaceBetween,
+      fieldStyle: fieldStyle ?? FieldStyle.underline,
       onCompleted: onCompleted,
       otpFieldStyle: OtpFieldStyle(
         enabledBorderColor: AppColorPalettes.silver300,
         borderColor: context.colors.secondary,
         focusBorderColor: context.colors.secondary,
       ),
-      //must move to domain
       onChanged: (String value) {
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < length; i++) {
           if (value.length > i) {
             isFilled[i] = true;
           } else {
