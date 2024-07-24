@@ -2,7 +2,7 @@ import 'package:chat__app/core/constants/authentication/create_acconut_constats.
 import 'package:chat__app/core/theme/app_theme.dart';
 import 'package:chat__app/core/widget/main_btn_widget.dart';
 import 'package:chat__app/core/widget/textfeild_widget.dart';
-import 'package:chat__app/view/pages/chat_list_page.dart';
+import 'package:chat__app/view/pages/chat/chat_list_page.dart';
 import 'package:chat__app/view/widgets/create_account/profile_image_selector_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -33,7 +33,9 @@ class CreateAccount extends ConsumerWidget {
               child: TextFeildWidget(
                 hinttxt: text.userNameText,
                 textController: textController,
-                validator: (value) {},
+                validator: (value) {
+                  return null;
+                },
               ),
             ),
             Padding(

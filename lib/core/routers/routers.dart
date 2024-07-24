@@ -1,10 +1,12 @@
 import 'package:chat__app/main.dart';
-import 'package:chat__app/view/pages/chat_list_page.dart';
-import 'package:chat__app/view/pages/chat_page.dart';
+import 'package:chat__app/view/pages/chat/chat_list_page.dart';
+import 'package:chat__app/view/pages/chat/chat_page.dart';
 import 'package:chat__app/view/pages/create_account.dart';
 import 'package:chat__app/view/pages/login_page.dart';
 import 'package:chat__app/view/pages/onboading/onboading_page_one.dart';
 import 'package:chat__app/view/pages/otp_page.dart';
+import 'package:chat__app/view/pages/profile/profile_page.dart';
+import 'package:chat__app/view/pages/profile/profile_settings_page.dart';
 import 'package:chat__app/view/pages/splash_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -55,6 +57,18 @@ final router = GoRouter(
         path: ChatPage.routePath,
         builder: (context, state) {
           return const ChatPage();
+        },
+      ),
+      GoRoute(
+        path: ProfilePage.routePath,
+        builder: (context, state) {
+          return const ProfilePage();
+        },
+      ),
+      GoRoute(
+        path: ProfileSettingsPage.routePath,
+        builder: (context, state) {
+          return const ProfileSettingsPage();
         },
       ),
     ]);

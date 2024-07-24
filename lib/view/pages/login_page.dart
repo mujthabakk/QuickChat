@@ -2,7 +2,6 @@ import 'package:chat__app/core/constants/authentication/login_page_constants.dar
 import 'package:chat__app/core/constants/onboading_constats/onboading_img_constatns.dart';
 import 'package:chat__app/core/theme/app_theme.dart';
 import 'package:chat__app/core/widget/main_btn_widget.dart';
-import 'package:chat__app/utils/alert_box/alert_box.dart';
 import 'package:chat__app/view/pages/otp_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -41,15 +40,15 @@ class LoginPage extends ConsumerWidget {
               initialCountryCode: 'IN',
               keyboardType: TextInputType.phone,
               decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color:
-                        context.colors.secondary, // Customize the border color
-                    width: 2.0, // Customize the border width
-                  ),
-                  borderRadius: BorderRadius.circular(context.spaces
-                      .space_100), // Customize the border radius if needed
-                ),
+                // border: OutlineInputBorder(
+                //   // borderSide: BorderSide(
+                //   //   color:
+                //   //       context.colors.secondary, // Customize the border color
+                //   //   width: 2.0, // Customize the border width
+                //   // ),
+                //   // borderRadius: BorderRadius.circular(context.spaces
+                //   //     .space_100), // Customize the border radius if needed
+                // ),
                 labelText: textConstatns.txtPhoneNo,
                 contentPadding: EdgeInsets.only(
                   bottom: context.spaces.space_200,

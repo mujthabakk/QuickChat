@@ -1,9 +1,9 @@
 import 'package:chat__app/core/constants/app_constats/app_constants.dart';
 import 'package:chat__app/core/constants/chat_list_constats/chat_list_constats.dart';
 import 'package:chat__app/core/theme/app_theme.dart';
-import 'package:chat__app/core/theme/color_palette.dart';
 import 'package:chat__app/core/widget/textfeild_widget.dart';
-import 'package:chat__app/view/pages/chat_page.dart';
+import 'package:chat__app/view/pages/profile/profile_page.dart';
+import 'package:chat__app/view/widgets/chat_page/chat_list_tile_widet.dart';
 import 'package:chat__app/view/widgets/splas_screen/text_gradient_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -20,6 +20,16 @@ class ChatListPage extends ConsumerWidget {
     final text = ref.watch(chatListConstatsProvider);
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              context.push(ProfilePage.routePath);
+            },
+            icon: const Icon(
+              Icons.more_vert,
+            ),
+          ),
+        ],
         automaticallyImplyLeading: false,
         title: GradientText(
           appName,
@@ -41,7 +51,9 @@ class ChatListPage extends ConsumerWidget {
               ),
               hinttxt: text.serchText,
               textController: textController,
-              validator: (value) {},
+              validator: (value) {
+                return null;
+              },
             ),
           ),
           Expanded(
@@ -50,42 +62,14 @@ class ChatListPage extends ConsumerWidget {
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: ListTile(
-                    onTap: () {
-                      context.push(ChatPage.routePath);
-                    },
-                    leading: const CircleAvatar(
-                      radius: 30,
-                      backgroundImage: NetworkImage(
+                  child: ChatListTileWidet(
+                    onTap: () {},
+                    image:
                         "https://upload.wikimedia.org/wikipedia/commons/e/e0/Userimage.png",
-                      ),
-                    ),
-                    title: Text(
-                      'User $index',
-                      style: context.typography.h3,
-                    ),
-                    subtitle: Text(
-                      'Message $index',
-                      style: context.typography.body,
-                    ),
-                    trailing: Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundColor: AppColorPalettes.green500,
-                          radius: 10,
-                          child: Center(
-                            child: Text(
-                              '2',
-                              style: context.typography.bodySmall,
-                            ),
-                          ),
-                        ),
-                        Text(
-                          "11:12",
-                          style: context.typography.bodySmall,
-                        )
-                      ],
-                    ),
+                    userName: "name",
+                    lastMessage: "last message",
+                    messageCount: "1",
+                    time: "time",
                   ),
                 );
               },
